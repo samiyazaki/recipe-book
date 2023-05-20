@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function RecipesList() {
@@ -22,7 +22,7 @@ function RecipesList() {
             <td>{currentrecipe.title}</td>
             <td>{currentrecipe.ingredients.join(', ')}</td>
             <td>
-              <Link to={"/edit/"+currentrecipe._id}>edit</Link> 
+            <Link to={{pathname: `/edit/${currentrecipe._id}`}}>edit</Link> 
             </td>
           </tr>
         );
@@ -48,4 +48,4 @@ function RecipesList() {
     );
   }
   
-  export default RecipesList;
+export default RecipesList;

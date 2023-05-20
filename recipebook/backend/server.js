@@ -12,7 +12,9 @@ app.use(express.json());
 app.use('/recipes',recipesRouter);
 
 const uri=process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true  });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log('Database Connected Successfully'))
+.catch(err => console.log(err));
 
 const connection=mongoose.connection;
 connection.once('open',()=>{
