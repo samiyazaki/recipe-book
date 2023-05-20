@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function CreateRecipe() {
   const [title, setTitle] = useState('');
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
 
   const onSubmit = (e) => {
@@ -11,7 +11,7 @@ function CreateRecipe() {
 
     const recipe = {
       title: title,
-      ingredients: ingredients,
+      ingredients: ingredients.split(',').map(ingredient => ingredient.trim()), // Transform ingredients string into an array
       instructions: instructions,
     }
 
@@ -21,7 +21,7 @@ function CreateRecipe() {
       .then(res => console.log(res.data));
 
     setTitle('');
-    setIngredients([]);
+    setIngredients('');
     setInstructions('');
   }
 
@@ -29,7 +29,35 @@ function CreateRecipe() {
     <div>
       <h3>Create New Recipe</h3>
       <form onSubmit={onSubmit}>
-        {/* Form fields to set title, ingredients, and instructions */}
+        <div>
+          <label>Title: </label>
+          <input 
+            type="text" 
+            required 
+            value={title} 
+            onChange={(e) => setTitle(e.target.value)} 
+          />
+        </div>
+        <div>
+          <label>Ingredients (separated by commas): </label>
+          <input 
+            type="text" 
+            required 
+            value={ingredients} 
+            onChange={(e) => setIngredients(e.target.value)} 
+          />
+        </div>
+        <div>
+          <label>Instructions: </label>
+          <textarea 
+            required 
+            value={instructions} 
+            onChange={(e) => setInstructions(e.target.value)}
+          />
+        </div>
+        <div>
+          <input type="submit" value="Create Recipe" />
+        </div>
       </form>
     </div>
   );

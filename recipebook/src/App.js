@@ -1,18 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RecipesList from './components/RecipesList';
 import CreateRecipe from './components/CreateRecipe';
 import EditRecipe from './components/EditRecipe';
-import RecipesList from './components/RecipesList';
 
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Route path="/" exact component={RecipesList} />
-        <Route path="/edit/:id" component={EditRecipe} />
-        <Route path="/create" component={CreateRecipe} />
-      </div>
+      <Routes>
+        <Route path="/" element={<RecipesList />} />
+        <Route path="/create" element={<CreateRecipe />} />
+        <Route path="/edit/:id" element={<EditRecipe />} />
+      </Routes>
     </Router>
   );
 }
