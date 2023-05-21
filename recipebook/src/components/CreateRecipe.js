@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function CreateRecipe() {
   const [title, setTitle] = useState('');
-  const [ingredients, setIngredients] = useState('');
+  const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState('');
 
   const onSubmit = (e) => {
@@ -11,7 +11,7 @@ function CreateRecipe() {
 
     const recipe = {
       title: title,
-      ingredients: ingredients.split(',').map(ingredient => ingredient.trim()), // Transform ingredients string into an array
+      ingredients: ingredients.split(','),
       instructions: instructions,
     }
 
@@ -21,7 +21,7 @@ function CreateRecipe() {
       .then(res => console.log(res.data));
 
     setTitle('');
-    setIngredients('');
+    setIngredients([]);
     setInstructions('');
   }
 
@@ -29,34 +29,35 @@ function CreateRecipe() {
     <div>
       <h3>Create New Recipe</h3>
       <form onSubmit={onSubmit}>
-        <div>
+        <div className="form-group">
           <label>Title: </label>
-          <input 
-            type="text" 
-            required 
-            value={title} 
-            onChange={(e) => setTitle(e.target.value)} 
+          <input type="text"
+              required
+              className="form-control"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
-          <label>Ingredients (separated by commas): </label>
-          <input 
-            type="text" 
-            required 
-            value={ingredients} 
-            onChange={(e) => setIngredients(e.target.value)} 
+        <div className="form-group">
+          <label>Ingredients (comma separated): </label>
+          <input type="text"
+              required
+              className="form-control"
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Instructions: </label>
-          <textarea 
-            required 
-            value={instructions} 
-            onChange={(e) => setInstructions(e.target.value)}
+          <input type="text"
+              required
+              className="form-control"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
           />
         </div>
-        <div>
-          <input type="submit" value="Create Recipe" />
+        <div className="form-group">
+          <input type="submit" value="Create Recipe" className="btn btn-primary" />
         </div>
       </form>
     </div>
