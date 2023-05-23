@@ -1,51 +1,37 @@
-import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function RecipesList() {
-    const [recipes, setRecipes] = useState([]);
-  
-    useEffect(() => {
-      axios.get('http://localhost:5000/recipes/')
-        .then(response => {
-          setRecipes(response.data)
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    }, []);
-  
-    const recipeList = () => {
-      return recipes.map(currentrecipe => {
-        return (
-          <tr key={currentrecipe._id}>
-            <td>{currentrecipe.title}</td>
-            <td>{currentrecipe.ingredients.join(', ')}</td>
-            <td>
-            <Link to={{pathname: `/edit/${currentrecipe._id}`}}>edit</Link> 
-            </td>
-          </tr>
-        );
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/recipes/')
+      .then(response => {
+        setRecipes(response.data);
       })
-    }
-  
-    return (
-        <div className="container">
-          <h3 className="my-4">Recipes</h3>
-          <table className="table">
-            <thead className="thead-light">
-              <tr>
-                <th>Title</th>
-                <th>Ingredients</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              { recipeList() }
-            </tbody>
-          </table>
+      .catch(function (error) {
+        console.log(error);
+      })
+  }, []);
+
+  return (
+    <div className="container">
+      <h3 className="my-4">Recipes List</h3>
+      {recipes.map((recipe, index) => (
+        <div key={index} className="card mb-3">
+          <div className="card-header">
+            {recipe.title}
+          </div>
+          <div className="card-body">
+            <h5 className="card-title">Ingredients</h5>
+            <p className="card-text">{recipe.ingredients.join(', ')}</p>
+            <h5 className="card-title">Instructions</h5>
+            <p className="card-text">{recipe.instructions}</p>
+          </div>
         </div>
-      );
-    }
-  
+      ))}
+    </div>
+  );
+}
+
 export default RecipesList;
