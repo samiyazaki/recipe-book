@@ -9,9 +9,15 @@ function CreateRecipe() {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    // Check if all fields are filled out
+    if (title === '' || ingredients.length === 0 || instructions === '') {
+      alert('All fields must be filled out');
+      return;
+    }
+
     const recipe = {
       title: title,
-      ingredients: ingredients.split(','),
+      ingredients: ingredients,
       instructions: instructions,
     }
 
@@ -35,7 +41,7 @@ function CreateRecipe() {
         </div>
         <div className="form-group">
           <label>Ingredients:</label>
-          <input type="text" className="form-control" value={ingredients.join(', ')} onChange={e => setIngredients(e.target.value.split(','))} />
+          <input type="text" className="form-control" value={ingredients.join(', ')} onChange={e => setIngredients(e.target.value.split(',').map(ingredient => ingredient.trim()))} />
         </div>
         <div className="form-group">
           <label>Instructions:</label>

@@ -12,6 +12,7 @@ function EditRecipe() {
   useEffect(() => {
     axios.get('http://localhost:5000/recipes/' + id)
       .then(response => {
+        console.log("Response date:", response.data);
         setTitle(response.data.title);
         setIngredients(response.data.ingredients);
         setInstructions(response.data.instructions);
