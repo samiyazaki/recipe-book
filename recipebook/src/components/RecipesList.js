@@ -30,22 +30,22 @@ function RecipesList() {
     }
   
     return (
-      <div>
-        <h3>Recipes</h3>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>Title</th>
-              <th>Ingredients</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            { recipeList() }
-          </tbody>
-        </table>
-      </div>
-    );
-  }
+        <div className="container">
+          <h3 className="my-4">Recipes</h3>
+          <table className="table">
+            <thead className="thead-light">
+              <tr>
+                <th>Title</th>
+                <th>Ingredients</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              { recipeList() }
+            </tbody>
+          </table>
+        </div>
+      );
+    }
   
 export default RecipesList;

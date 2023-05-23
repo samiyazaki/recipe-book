@@ -26,39 +26,22 @@ function CreateRecipe() {
   }
 
   return (
-    <div>
-      <h3>Create New Recipe</h3>
+    <div className="container">
+      <h3 className="my-4">Create New Recipe</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>Title: </label>
-          <input type="text"
-              required
-              className="form-control"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-          />
+          <label>Title:</label>
+          <input type="text" className="form-control" value={title} onChange={e => setTitle(e.target.value)} />
         </div>
         <div className="form-group">
-          <label>Ingredients (comma separated): </label>
-          <input type="text"
-              required
-              className="form-control"
-              value={ingredients}
-              onChange={(e) => setIngredients(e.target.value)}
-          />
+          <label>Ingredients:</label>
+          <input type="text" className="form-control" value={ingredients.join(', ')} onChange={e => setIngredients(e.target.value.split(','))} />
         </div>
         <div className="form-group">
-          <label>Instructions: </label>
-          <input type="text"
-              required
-              className="form-control"
-              value={instructions}
-              onChange={(e) => setInstructions(e.target.value)}
-          />
+          <label>Instructions:</label>
+          <textarea className="form-control" value={instructions} onChange={e => setInstructions(e.target.value)} />
         </div>
-        <div className="form-group">
-          <input type="submit" value="Create Recipe" className="btn btn-primary" />
-        </div>
+        <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </form>
     </div>
   );
