@@ -14,22 +14,46 @@ function RecipesList() {
       })
   }, []);
 
+  const deleteRecipe = (id) => {
+    axios.delete('http://localhost:5000/recipes/' + id)
+    .then(response => {
+        console.log(response.data);
+        setRecipes(recipes.filter(el => el._id !== id));
+    });
+    }
+
+    const editRecipe = (id) => {
+        window.location = '/edit/' + id;
+    }
+
+
+
   return (
-    <div className="container">
-      <h3 className="my-4">Recipes List</h3>
-      {recipes.map((recipe, index) => (
-        <div key={index} className="card mb-3">
-          <div className="card-header">
-            {recipe.title}
-          </div>
-          <div className="card-body">
-            <h5 className="card-title">Ingredients</h5>
-            <p className="card-text">{recipe.ingredients.join(', ')}</p>
-            <h5 className="card-title">Instructions</h5>
-            <p className="card-text">{recipe.instructions}</p>
-          </div>
-        </div>
-      ))}
+    <div>
+      <h3>Recipes</h3>
+      <table className="table">
+        <thead className="thead-light">
+          <tr>
+            <th>Title</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recipes.map(currentrecipe => (
+            <tr key={currentrecipe._id}>
+              <td>{currentrecipe.title}</td>
+              <td>{currentrecipe.ingredients.join(', ')}</td>
+              <td>{currentrecipe.instructions}</td>
+              <td>
+                <button onClick={() => editRecipe(currentrecipe._id)}>Edit</button>
+                <button onClick={() => deleteRecipe(currentrecipe._id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -22,5 +22,10 @@ router.route('/add').post((req, res) => {
     .then(() => res.json('Recipe added!'))
     .catch(err => res.status(400).json('Error: ' + err));
   });
+  router.route('/delete/:id').delete((req, res) => {
+    Recipe.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Recipe deleted.'))
+        .catch(err=> res.status(400).json('Error: ' + err));
+  });
   
 module.exports=router;
