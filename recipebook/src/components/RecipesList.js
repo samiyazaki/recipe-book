@@ -15,12 +15,12 @@ function RecipesList() {
   }, []);
 
   const deleteRecipe = (id) => {
-    axios.delete('http://localhost:5000/recipes/' + id)
-    .then(response => {
-        console.log(response.data);
-        setRecipes(recipes.filter(el => el._id !== id));
-    });
-    }
+    axios.delete('http://localhost:5000/recipes/delete/' + id)
+      .then(response => {
+          console.log(response.data);
+          setRecipes(recipes.filter(el => el._id !== id));
+      });
+  }
 
     const editRecipe = (id) => {
         window.location = '/edit/' + id;

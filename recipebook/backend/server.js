@@ -22,6 +22,7 @@ connection.once('open',()=>{
 }
 )
 
+console.log('process.env.ATLAS_URI: ', process.env.ATLAS_URI);
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);
 }
