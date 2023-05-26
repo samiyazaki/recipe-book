@@ -27,5 +27,25 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('Recipe deleted.'))
         .catch(err=> res.status(400).json('Error: ' + err));
   });
-  
+
+    router.route('/:id').get((req, res) => {
+        Recipe.findById(req.params.id)
+        .then(recipe => res.json(recipe))
+        .catch(err => res.status(400).json('Error: ' + err));
+    });
+
+    router.route('/update/:id').post((req, res) => {
+        Recipe.findById(req.params.id)
+        .then(recipe => {
+            recipe.title = req.body.title;
+            recipe.ingredients = req.body.ingredients;
+            recipe.instructions = req.body.instructions;
+
+            recipe.save()
+            .then(() => res.json('Recipe updated!'))
+            .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+    });
+    
 module.exports=router;
