@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import confetti from 'canvas-confetti';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CreateRecipe() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState('');
 
+  const shootConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 180,
+      origin: { y: 0.6 },
+    });
+    }
+
   const onSubmit = (e) => {
     e.preventDefault();
-
+    shootConfetti();
     // Check if all fields are filled out
     if (title === '' || ingredients.length === 0 || instructions === '') {
       alert('All fields must be filled out');
