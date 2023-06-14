@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/samiyazaki/recipe-book/static/css/main.44f8b8b5.css",
+    "main.js": "/samiyazaki/recipe-book/static/js/main.2f3f7374.js",
+    "static/js/787.a2edf50a.chunk.js": "/samiyazaki/recipe-book/static/js/787.a2edf50a.chunk.js",
+    "static/media/enakai.JPG": "/samiyazaki/recipe-book/static/media/enakai.16a527e9665b9553a9aa.JPG",
+    "index.html": "/samiyazaki/recipe-book/index.html",
+    "main.44f8b8b5.css.map": "/samiyazaki/recipe-book/static/css/main.44f8b8b5.css.map",
+    "main.2f3f7374.js.map": "/samiyazaki/recipe-book/static/js/main.2f3f7374.js.map",
+    "787.a2edf50a.chunk.js.map": "/samiyazaki/recipe-book/static/js/787.a2edf50a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44f8b8b5.css",
+    "static/js/main.2f3f7374.js"
+  ]
+}
