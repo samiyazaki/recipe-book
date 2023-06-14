@@ -3,6 +3,42 @@ import axios from 'axios';
 import confetti from 'canvas-confetti';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+const styles = {
+  container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F5F7FA',
+  },
+  title: {
+      color: '#1ecbe1',
+      fontFamily: 'Comic Sans MS', 
+      fontSize: '32px', 
+      marginTop: '1em',
+  },
+  form: {
+      backgroundColor: '#ffffff', 
+      borderRadius: '5px', 
+      padding: '2em', 
+      boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.1)', 
+      width: '80%',
+      fontFamily: 'Comic Sans MS', // Playful font
+  },
+  formGroup: {
+      marginBottom: '1em', // Space between form elements
+  },
+  formControl: {
+      height: '2.5em', // Higher input fields for easier interaction
+  },
+  button: {
+      backgroundColor: '#1ecbe1', // Vibrant color
+      color: '#ffffff', // White color for contrast
+      fontFamily: 'Comic Sans MS', // Playful font
+  },
+};
+
 function CreateRecipe() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState([]);
