@@ -10,29 +10,27 @@ function Home() {
     );
   }
   
-  const styles = {
-      container: {
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100vh',
-          textAlign: 'center',
-          backgroundImage: 'url('+ enakai +')',
-          backgroundSize: 'cover', // Cover the whole area with the background image
-      },
-      image: {
-          height: '40%', // Reduced the size to be more appropriate for children
-          width: '40%',  // Reduced the size to be more appropriate for children
-          objectFit: 'cover',
-      },
-      title: {
-          marginTop: '2em',
-          color: '#1ecbe1', // Vibrant color
-          fontFamily: 'Comic Sans MS', // Playful font
-          fontSize: '28px', // Larger size for readability
-      },
-  };
-  
-  export default Home;
-  
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        textAlign: 'center',
+        backgroundColor: '#F5F7FA',
+    },
+    image: {
+        height: '40%',
+        width: '40%',
+        objectFit: 'cover',
+        marginTop: '2em'
+    },
+    title: {
+        color: '#1ecbe1', 
+        fontFamily: 'Comic Sans MS', 
+        fontSize: '28px', 
+    },
+};
+
+export default Home;
