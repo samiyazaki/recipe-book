@@ -1,6 +1,6 @@
 # My Recipe Book
 
-![Home Page](./src/assets/images/homepage_screenshot.png)
+![Home Page](../assets/enakai.JPG)
 
 My Recipe Book is a full-stack web application that allows users to view, add, edit, and delete recipes. The application is built using React for the frontend and Node.js and Express.js for the backend. The data is stored in a MongoDB database.
 
