@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font-family: 'Nunito', sans-serif; /* a friendly sans-serif font */
+  color: #333; /* darker text for better readability */
+  background-color: #fdfdfd; /* light background color to keep things clean */
+  line-height: 1.6; /* adding a bit more space between lines of text for readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; /* a more decorative serif font for headings */
+}
+
+.cursor-ball {
+  /* ...leave this the same... */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+img {
+  max-width: 100%; /* make sure images aren't bigger than their container */
+}
+
+.navbar {
+  /* You can play with colors to make it fit with your site */
+  background-color: #f8f9fa;
+}
+
+.navbarBrand, .navLink {
+  /* Adjust font size and color to match the overall design */
+  font-size: 1.25em;
+  color: #333;
+}
+
+.card {
+  margin-bottom: 2em;
+}
+
+.card-img-top {
+  /* This makes the image take up only as much space as it needs, with a nice border radius */
+  width: 100%;
+  height: auto;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.card-body {
+  /* ...keep this the same... */
+}
+

@@ -9,28 +9,31 @@ function Home() {
       </div>
     );
   }
-  
-const styles = {
+  const styles = {
     container: {
+        position: 'relative',
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
         textAlign: 'center',
         backgroundColor: '#F5F7FA',
     },
     image: {
-        height: '40%',
-        width: '40%',
+        width: '100%',
+        height: 'calc(100vh - 56px)', // full height minus navbar height
         objectFit: 'cover',
-        marginTop: '2em'
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: -1,
     },
     title: {
         color: '#1ecbe1', 
-        fontFamily: 'Comic Sans MS', 
-        fontSize: '28px', 
+        fontFamily: 'Playfair Display', 
+        fontSize: '48px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // text shadow to make the text pop out from the image
     },
 };
+
 
 export default Home;
