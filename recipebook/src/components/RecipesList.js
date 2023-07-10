@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './recipeslist.css';
 
 function RecipesList() {
   const [recipes, setRecipes] = useState([]);

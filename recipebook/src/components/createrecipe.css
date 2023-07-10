@@ -1,0 +1,27 @@
+.create-recipe-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.create-recipe-form input,
+.create-recipe-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.create-recipe-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-recipe-form button:hover {
+    background-color: #0056b3;
+}

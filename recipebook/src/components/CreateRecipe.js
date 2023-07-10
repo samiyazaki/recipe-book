@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import confetti from 'canvas-confetti';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './createrecipe.css';
 
 const styles = {
   container: {
