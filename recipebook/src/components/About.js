@@ -1,21 +1,15 @@
 import React from 'react';
 
-function About() {
-  return (
-    <div className="container mt-5">
-      <h1>About Enakai</h1>
-      <p className="lead">Enakai is a 9-year-old who loves programming, playing with his dogs, and experimenting in the kitchen. This food blog is where he records his culinary adventures and unique recipes for him to pull up later.</p>
-
-      <h2 className="mt-4">His Journey</h2>
-      <p>Enakai's passion for cooking began at a young age. He was always curious about different ingredients, their tastes, and how they combine to create delicious dishes. He loves experimenting and often comes up with unique and creative recipes.</p>
-
-      <h2 className="mt-4">His Dogs</h2>
-      <p>When he's not in the kitchen or behind the computer, Enakai loves spending time with his dogs. They're his constant companions and source of joy.</p>
-
-      <h2 className="mt-4">His Future</h2>
-      <p>With this blog, Enakai hopes to inspire other kids to explore their culinary interests. He believes that cooking should be fun, creative, and most importantly, delicious!</p>
-    </div>
-  );
-}
+const About = () => {
+    return (
+        <div>
+            <h1>About Recipe Book</h1>
+            <p>Welcome to Recipe Book, where the art of cooking meets the joy of experimentation! Our mission is to inspire individuals to discover the endless possibilities that exist within the culinary world.</p>
+            <p>At Recipe Book, we believe that every ingredient, every flavor combination, and every technique offers a unique opportunity to create something incredible. Whether you're an experienced chef or a beginner cook, the kitchen is your playground, and recipes are your guide.</p>
+            <p>Each recipe in our collection is more than just a list of ingredients and steps; it's a chance to learn, grow, and explore. When you mix new recipes and experiment with flavors, you're not just making food - you're creating memories, experiences, and, most importantly, you're having fun!</p>
+            <p>So, what are you waiting for? Dive in, start exploring, and let your taste buds lead the way!</p>
+        </div>
+    );
+};
 
 export default About;
